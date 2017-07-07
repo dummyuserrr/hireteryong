@@ -11,7 +11,7 @@
                     <!-- Begin # Login Form -->
                     <form id="login-form">
 		                <div class="modal-body">
-				    		<input id="login_username" class="form-control" type="text" placeholder="Username or Email" name="username" autofocus required><br>
+				    		<input id="login_username" class="form-control" type="text" placeholder="Username or Email" name="username" required><br>
 				    		<input id="login_password" class="form-control" type="password" placeholder="Password" name="password" required>
                             <span id="loginMessage"></span>
         		    	</div>

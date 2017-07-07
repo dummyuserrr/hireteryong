@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PagesController extends Controller
 {
@@ -16,5 +17,15 @@ class PagesController extends Controller
 
     public function test(){
     	return view('test');
+    }
+
+    public function homepage(){
+        return view('demo.demohomepage');
+    }
+
+    public function posts(){
+        $p = new Post;
+        $posts = $p->orderBy('created_at', 'desc')->get();
+    	return view('demo.posts', compact('posts'));
     }
 }

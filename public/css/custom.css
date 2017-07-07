@@ -1,4 +1,5 @@
 .list-group-item{
+	border-radius: 0;
 	border: none;
 }
 
@@ -6,10 +7,19 @@
 	list-style: none;
 }
 
-.navbar-dropdown{
-	background-color: none;
+.posts{
+	font-size: 11pt;
 }
 
-.dropdown-list{
-	color: black;
+#textarea-post{
+	resize: none;
+}
+
+#submitpost{
+	margin-top: -15px;
+	width: 70px;
+}
+
+hr{
+	border-color: #dddddd;
 }

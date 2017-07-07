@@ -40,6 +40,7 @@ class UsersController extends Controller
 
     public function setSession($u){
     	session()->put('status', 1);
+        session()->put('id', $u->id);
     	session()->put('fullname', $u->fullname);
     	session()->put('username', $u->username);
     }

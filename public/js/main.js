@@ -1,6 +1,8 @@
-// jqueries
+// global vars
+var loadingIcon = "<center><img src='loading.svg' style='width: 15px; height: 15px;'></center>";
 
-$(document).ready(function(){
+// jqueries
+$(document).ready(function(){	
 	$("#btnLogin").click(function(){
 		login();
 	});
@@ -16,10 +18,56 @@ $(document).ready(function(){
         	login();
     	}
 	});
+
+	$("#login-modal").on("shown.bs.modal", function(){
+		$('#login_username').focus();
+	});
+
+	$("#viewposts").click(function(){
+		var request = $.ajax({
+			url: "/demo/posts",
+			type: "POST",
+			data: {
+				_token: $("#globalcsrf").val(),
+			},
+			dataType: "html",
+			beforeSend: function(){
+				$("#demo-content").html(loadingIcon);
+				// history.pushState(null, null, "/demo/posts");
+				$("#viewposts").attr('class', 'list-group-item active');
+				$("#demohomepage").attr('class', 'list-group-item');
+			},
+			success: function(){
+				$("#demo-content").html(request.responseText);
+			}
+		});
+	});
+
+	$("#demohomepage").click(function(){
+		var request = $.ajax({
+			url: "/demo/home",
+			type: "POST",
+			data: {
+				_token: $("#globalcsrf").val(),
+			},
+			dataType: "html",
+			beforeSend: function(){
+				$("#demo-content").html(loadingIcon);
+				$("#viewposts").attr('class', 'list-group-item');
+				$("#demohomepage").attr('class', 'list-group-item active');
+			},
+			success: function(){
+				$("#demo-content").html(request.responseText);
+			}
+		});
+	});
+
+	$("#submitpost").click(function(){
+		
+	});
 });
 
 // native javascript functions
-
 function logout(usernameMD5){
 	var request = $.ajax({
 		url: "/demo/logout",
@@ -60,4 +108,25 @@ function login(){
 			}
 		}
 	});
+}
+
+function submitpost(){
+	if($("#textarea-post").val().length < 1){
+		alert('Really? Posting with nothing? Please say something!');
+	}else{
+		var request = $.ajax({
+			url: "/demo/posts/add",
+			type: "POST",
+			data: {
+				body: $("#textarea-post").val(),
+				_token: $("#globalcsrf").val(),
+			},
+			dataType: "html",
+			beforeSend: function(){ },
+			success: function(){
+				$("#textarea-post").val('');
+				alert(request.responseText);
+			}
+		});
+	}
 }
