@@ -1,8 +1,12 @@
-@extends('mainlayout')
+@extends('layouts.mainlayout')
+
+@section('title')
+    Hire Teryong
+@stop
 
 @section('content')
     <!-- Header -->
-    <header>
+    <header style="margin-top: -40px">
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">

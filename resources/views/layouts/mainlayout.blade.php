@@ -13,7 +13,8 @@
     <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Bootstrap JS -->
+    <link rel="stylesheet" type="text/css" href="css/sticky-footer.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body id="page-top" class="index">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
@@ -70,7 +71,7 @@
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
 </body>
-<footer class="text-center">
+<footer class="text-center footer">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
