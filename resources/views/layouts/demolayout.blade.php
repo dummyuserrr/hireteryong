@@ -27,27 +27,25 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">HIRE TERYONG</a>
+                <a class="navbar-brand" href="/">HIRE TERYONG</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+                @if(session()->has('status'))
+                    <li class="dropdown navbar-dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ session('fullname') }}
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="color: black">
+                          <li><a href="#">My Profile</a></li>
+                        </ul>
                     </li>
-                    <li class="page-scroll">
-                        <a href="/demo" style="color: #e84343">PROCEED TO DEMO</a>
+                @else
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Login or Register</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
+                @endif
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

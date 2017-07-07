@@ -5,3 +5,11 @@
 .leftnavlist{
 	list-style: none;
 }
+
+.navbar-dropdown{
+	background-color: none;
+}
+
+.dropdown-list{
+	color: black;
+}

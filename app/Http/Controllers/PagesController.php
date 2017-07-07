@@ -13,4 +13,8 @@ class PagesController extends Controller
     public function demoIndex(){
     	return view('demo.index');
     }
+
+    public function test(){
+    	return view('test');
+    }
 }
