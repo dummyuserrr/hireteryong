@@ -1,4 +1,6 @@
 <?php
-	function sendVerificationMail($email, $fullname){
-        Mail::to($email)->queue(new WelcomeMail($fullname));
+	use App\Mail\VerificationMail;
+
+	function sendVerificationMail($email, $fullname, $verificationcode){
+        Mail::to($email)->queue(new VerificationMail($fullname, $verificationcode));
     }

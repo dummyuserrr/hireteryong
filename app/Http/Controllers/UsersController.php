@@ -21,8 +21,12 @@ class UsersController extends Controller
     	$u->email = $r->email;
     	$u->username = $r->username;
     	$u->password = $password;
+        $u->verificationstatus = 'unverified';
     	$u->save();
+        // $verificationcode = md5(hash('sha512', $r->username).hash('ripemd160', $r->username).md5("protein is life"));
+        // sendVerificationMail($u->email, $u->fullname, $verificationcode);
     	$this->setSession($u);
+        return redirect('/demo');
     }
 
     public function login(Request $r){
@@ -43,6 +47,20 @@ class UsersController extends Controller
         session()->put('id', $u->id);
     	session()->put('fullname', $u->fullname);
     	session()->put('username', $u->username);
+        session()->put('verificationstatus', $u->verificationstatus);
+    }
+
+    public function verify(Request $r){
+        $code = md5(hash('sha512', session('username')).hash('ripemd160', session('username')).md5("protein is life"));
+        if($r->c == $code){
+            $u = new User;
+            $user = $u->where('id', session('id'))->first();
+            $user->update(['verificationstatus' => 'verified']);
+            session()->put('verificationstatus', 'verified');
+            return "Your account has been verified!";
+        }else{
+            return "Something went wrong";
+        }
     }
 
     public function logout(Request $r){

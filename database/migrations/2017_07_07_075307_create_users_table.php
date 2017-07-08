@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('username');
             $table->string('password');
+            $table->string('verificationstatus')->default('unverified');
             $table->timestamps();
         });
     }

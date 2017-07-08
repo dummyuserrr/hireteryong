@@ -30,6 +30,16 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						@if(session()->has('status'))
+							<font class="pull-right">
+								<small>Account Status:</small>
+								@if(session('verificationstatus') == 'unverified')
+									<span style="color: red; text-transform: uppercase;">{{ session('verificationstatus') }}</span>
+								@else
+									<span style="color: green; text-transform: uppercase;">{{ session('verificationstatus') }}</span>
+								@endif
+							</font>
+						@endif
+						@if(session()->has('status'))
 							<strong>Hi <font style="color:#ff0000; text-transform: uppercase;">{{ session('fullname')}}</font>, welcome to this demo.</strong>
 						@else
 							<strong>Hi <font style="color:#ff0000">Stranger</font>, welcome to this demo. <a href="#" data-toggle="modal" data-target="#login-modal">CLICK HERE TO LOGIN OR REGISTER</a> if you want.</strong>
