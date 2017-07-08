@@ -145,10 +145,13 @@ function submitComment(postId){
 				_token: $("#globalcsrf").val(),
 			},
 			dataType: "html",
-			beforeSend: function(){ },
+			beforeSend: function(){
+				$("#btnSubmitComment"+postId).attr('disabled', 'true');
+			},
 			success: function(){
 				$("#txtComment"+postId).val('');
-				$("#commentsContent").prepend(request.responseText);
+				$("#commentsContent"+postId).prepend(request.responseText);
+				$("#btnSubmitComment"+postId).removeAttr('disabled');
 			}
 		});
 	}
@@ -164,10 +167,10 @@ function loadComments(postId){
 		},
 		dataType: "html",
 		beforeSend: function(){ 
-			$("#commentsContent").html(commentLoadingIcon);
+			$("#commentsContent"+postId).html(commentLoadingIcon);
 		},
 		success: function(){
-			$("#commentsContent").html(request.responseText);
+			$("#commentsContent"+postId).html(request.responseText);
 		}
 	});
 }
