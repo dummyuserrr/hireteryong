@@ -113,7 +113,7 @@
                     <p>I built this website because I'm a fresh graduate and this will serve as my portfolio. I believe that having an online output of my work will increase my chance of getting hired.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p>If you're wondering what does TERYONG mean,<br> it's my nickname. By the way, to be honest, this is just a <br>modified template. I'm more of a backend guy.<br> Please ignore the informalities and the inappropriate <br>words used in this website. </p>
+                    <p>If you're wondering what does TERYONG<br> mean, it's my nickname. Please ignore the<br> informalities and the inappropriate <br>words used in this website. </p>
                 </div>
             </div>
         </div>

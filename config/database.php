@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
+        'driver' => 'pgsql',
             'host' => env('DB_HOST', 'ec2-23-21-227-73.compute-1.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'd587kmi3rri6h6'),
