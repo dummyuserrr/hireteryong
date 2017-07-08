@@ -21,7 +21,7 @@ class PagesController extends Controller
 
     public function posts(Request $r){
         $p = new Post;
-        $posts = $p->orderBy('created_at', 'desc')->simplePaginate(2);
+        $posts = $p->orderBy('created_at', 'desc')->get();
     	return view('demo.posts', compact('posts'));
     }
 }
