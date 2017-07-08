@@ -17,11 +17,13 @@ class PostsController extends Controller
     		$p->user_id = session('id');
     		$p->body = $r->body;
     		$p->save();
-    		return 'Thank you for posting, '.session('fullname');
+            $post = $p;
+            return view('demo.postToPrepend', compact('post'));
     	}else{
     		$p->body = $r->body;
     		$p->save();
-    		return 'Thank you for posting, stranger';
+            $post = $p;
+            return view('demo.postToPrepend', compact('post'));
     	}
     }
 }

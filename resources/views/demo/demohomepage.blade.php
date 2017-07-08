@@ -12,7 +12,7 @@
 		<li>
 			<b>USER AUTHENTICATION</b> - You can use your email or username to login. If you're logged in, the word <strong>STRANGER</strong> on this panel heading will be replaced by your name. The <b>LOGIN</b> buttons will also be replaced by <b>LOGOUT</b>.</li>
 		<li>
-			<b>REGISTRATION</b> - Well, it's obvious. You should also activate your account by clicking the link attached on the email</li>
+			<b>REGISTRATION</b> - Well, it's obvious. You should also activate your account by clicking the link attached on the email. After that, your account status shown at the top-right side of this panel will be set to <b>VERIFIED</b>. But it doesn't matter. </li>
 		</li>
 		<li>
 			<b>EMAIL/EMAIL VERIFICATION</b> - After registration, an email will be sent to the email you provided. Just make sure that it's correct.

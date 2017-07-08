@@ -123,10 +123,13 @@ function submitpost(){
 				_token: $("#globalcsrf").val(),
 			},
 			dataType: "html",
-			beforeSend: function(){ },
+			beforeSend: function(){ 
+				$("#submitpost").attr('disabled', 'true');
+			},
 			success: function(){
 				$("#textarea-post").val('');
-				alert(request.responseText);
+				$("#allposts").prepend(request.responseText);
+				$("#submitpost").removeAttr('disabled');
 			}
 		});
 	}
