@@ -4,7 +4,7 @@
 	</div>
 	<div class="media-body">
 		<div class="media-heading">
-			<small class="pull-right commentDates">{{ $c->created_at }}</small>
+			<small class="pull-right commentDates">{{ $c->created_at->diffForHumans() }}</small>
 			<h6 class="media-heading">
 				@if($c->user_id == 0)
 					Stranger
