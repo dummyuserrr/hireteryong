@@ -1,3 +1,20 @@
+.commentsCollapse{
+	background-color: #e2e2e2;
+	padding: 7px;
+}
+
+.commentsubmit{
+	margin-top: -25px;
+}
+
+.commentDates{
+	color: #4f4f4f;
+}
+
+.postactions{
+	/*margin-left: 701px;*/
+}
+
 .list-group-item{
 	border-radius: 0;
 	border: none;
@@ -9,6 +26,10 @@
 
 .posts{
 	font-size: 11pt;
+}
+
+.comments{
+	font-size: 10pt;
 }
 
 #textarea-post{
@@ -23,3 +44,4 @@
 hr{
 	border-color: #dddddd;
 }
+

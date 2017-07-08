@@ -15,15 +15,11 @@ class PagesController extends Controller
     	return view('demo.index');
     }
 
-    public function test(){
-    	return view('test');
-    }
-
-    public function homepage(){
+    public function homepage(Request $r){
         return view('demo.demohomepage');
     }
 
-    public function posts(){
+    public function posts(Request $r){
         $p = new Post;
         $posts = $p->orderBy('created_at', 'desc')->get();
     	return view('demo.posts', compact('posts'));

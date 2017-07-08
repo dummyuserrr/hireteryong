@@ -1,5 +1,6 @@
 // global vars
-var loadingIcon = "<center><img src='loading.svg' style='width: 15px; height: 15px;'></center>";
+var loadingIcon = "<center><img src='loading.svg' style='width: 100px; height: 100px;'></center>";
+var commentLoadingIcon = "<center><img src='loading.svg' style='width: 50px; height: 50px;'></center>";
 
 // jqueries
 $(document).ready(function(){	
@@ -129,4 +130,44 @@ function submitpost(){
 			}
 		});
 	}
+}
+
+function submitComment(postId){
+	if($("#txtComment"+postId).val().length < 1){
+		alert("Replying with nothing? It's very OFFENSIVE!");
+	}else{
+		var request = $.ajax({
+			url: "/demo/posts/comment/add",
+			type: "POST",
+			data: {
+				postId: postId,
+				body: $("#txtComment"+postId).val(),
+				_token: $("#globalcsrf").val(),
+			},
+			dataType: "html",
+			beforeSend: function(){ },
+			success: function(){
+				$("#txtComment"+postId).val('');
+				$("#commentsContent").prepend(request.responseText);
+			}
+		});
+	}
+}
+
+function loadComments(postId){
+	var request = $.ajax({
+		url: "/demo/posts/comment/load",
+		type: "POST",
+		data: {
+			postId: postId,
+			_token: $("#globalcsrf").val(),
+		},
+		dataType: "html",
+		beforeSend: function(){ 
+			$("#commentsContent").html(commentLoadingIcon);
+		},
+		success: function(){
+			$("#commentsContent").html(request.responseText);
+		}
+	});
 }

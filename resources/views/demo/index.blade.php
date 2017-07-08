@@ -19,8 +19,8 @@
 					</div>
 					<div class="panel-body">
 						<div class="list-group">
-							<a href="#" class="list-group-item active" id="demohomepage">Demo Homepage</a>
-							<a href="#" class="list-group-item" id="viewposts">View Posts</a>
+							<a href="#home" class="list-group-item active" id="demohomepage">Demo Homepage</a>
+							<a href="#posts" class="list-group-item" id="viewposts">View Posts</a>
 							<a href="#" class="list-group-item">Third item</a>
 						</div>
 					</div>
@@ -30,7 +30,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						@if(session()->has('status'))
-							<strong>Hi <font style="color:#ff0000; text-transform: uppercase;">{{ session('fullname')}}</font>, welcome to this demo. <a href="#logout" onclick="logout('{{ md5(session('username')) }}')">CLICK HERE TO LOGOUT</a> if you want.</strong>
+							<strong>Hi <font style="color:#ff0000; text-transform: uppercase;">{{ session('fullname')}}</font>, welcome to this demo.</strong>
 						@else
 							<strong>Hi <font style="color:#ff0000">Stranger</font>, welcome to this demo. <a href="#" data-toggle="modal" data-target="#login-modal">CLICK HERE TO LOGIN OR REGISTER</a> if you want.</strong>
 						@endif

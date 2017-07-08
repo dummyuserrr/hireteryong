@@ -22,6 +22,18 @@
 				    <small class="pull-right">{{ $post->created_at->diffForHumans() }}</small></h5>
 				    <p class="posts">{{ $post->body }}</p>
 				  </div>
+				 <div style="background-color: none"><small class="postactions"><a class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a></small></div>
+				<div id="demo{{ $post->id }}" class="collapse commentsCollapse">
+					<div class="form-group">
+					  <textarea class="form-control" rows="2" id="txtComment{{ $post->id }}" placeholder="Comment (Please be friendly)" class="textarea-comment" style="resize: none;"></textarea><br>
+					  <button class="btn btn-xs btn-primary commentsubmit" onclick="submitComment('{{ $post->id }}')">Submit</button>
+					</div>
+					<h6 style="margin-top: -15px"><small>Comments</small></h6>
+					<div id="commentsContent">
+						
+					</div>
+				</div>
+
 				</div>
 			</div>
 		</div>

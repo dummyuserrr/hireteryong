@@ -37,7 +37,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ session('fullname') }}
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" style="color: black">
-                          <li><a href="#">My Profile</a></li>
+                          <li><a href="#" onclick="logout('{{ md5(session('username')) }}')">Logout</a></li>
                         </ul>
                     </li>
                 @else
