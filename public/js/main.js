@@ -109,8 +109,9 @@ function login(){
 }
 
 function submitpost(){
-	if($("#textarea-post").val().length < 1){
-		alert('Really? Posting with nothing? Please say something!');
+	var body = $("#textarea-post").val();
+	if(body.length < 1 || jQuery.trim(body).length==0){
+		alert('Really? Posting with nothing? Please say something! If you\'re trying to find bugs, you\'re doing a great job!');
 	}else{
 		var request = $.ajax({
 			url: "/demo/posts/add",
@@ -133,8 +134,9 @@ function submitpost(){
 }
 
 function submitComment(postId){
-	if($("#txtComment"+postId).val().length < 1){
-		alert("Replying with nothing? It's very OFFENSIVE!");
+	var body = $("#txtComment"+postId).val();
+	if(body.length < 1 || jQuery.trim(body).length==0){
+		alert("Replying with nothing? It's very OFFENSIVE! You'll get a lot of bashers from Peenoise because of that!");
 	}else{
 		var request = $.ajax({
 			url: "/demo/posts/comment/add",

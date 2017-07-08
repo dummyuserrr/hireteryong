@@ -23,7 +23,10 @@
 					    <small class="pull-right">{{ $post->created_at->diffForHumans() }}</small></h5>
 					    <p class="posts">{{ $post->body }}</p>
 					  </div>
-					 <div style="background-color: none"><small class="postactions"><a class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
+					<div id="postStats{{ $post->id }}">
+						<small>3 likes &bull; {{ $post->comments->count() }} replies</small>
+					</div>
+					<div style="background-color: none"><small class="postactions"><a class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
 					 @if($post->user_id == session('id') && $post->user_id != 0)
 						&bull; <a class="btn btn-xs" data-toggle="modal" data-target="#deleteModal" onclick="setPostToDelete('{{ $post->id }}')"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 					 @endif

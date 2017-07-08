@@ -1,7 +1,7 @@
 
 	<h4>NOTES</h4>
 	<ul>
-		<li>I just built some simple social media functions. This site is boring because its purpose is JUST TO DEMONSTRATE my web development skills.</li>
+		<li>I just built a social media with simple functions. This site is boring because its main purpose is TO DEMONSTRATE my web development skills especially on back-end.</li>
 		<li>When creating an account, I recommend you to <b>NOT</b> use your real name</li>
 		<li>This website is open-source. You can view its entire source code from my GitHub Repository (<a href="https://github.com/dummyuserrr/hireteryong">https://github.com/dummyuserrr/hireteryong</a>). Yeah, you can copy my codes. I made them as readable as I can.</li>
 		<li>To other developers who are much better, feel free to fork it and make a pull request.</li>
@@ -45,7 +45,7 @@
 			<b>COMMENT</b> - Users can comment on posts.
 		</li>
 		<li>
-			<b>REACTIONS</b> - Users can react (like, sad, love, haha, angry) to posts.
+			<b>LIKE</b> - Users can like to posts.
 		</li>
 		<li>
 			<b>ACCOUNT RECOVERY</b> - I ran out of words to explain this. Hehe.

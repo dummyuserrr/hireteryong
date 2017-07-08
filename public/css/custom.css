@@ -15,6 +15,21 @@
 	/*margin-left: 701px;*/
 }
 
+#profileDropdownLink:visited{
+	background-color: yellow;
+}
+
+#profileDropdown{
+	background-color: teal;
+}
+
+#linkLogout:active{
+	color: red;
+}
+#linkLogout:hover{
+	background-color: teal;
+}
+
 .list-group-item{
 	border-radius: 0;
 	border: none;

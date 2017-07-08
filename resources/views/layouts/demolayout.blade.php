@@ -34,11 +34,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 @if(session()->has('status'))
-                    <li class="dropdown navbar-dropdown">
+                    <li class="dropdown navbar-dropdown" id="profileDropdownLink">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ session('fullname') }}
                         <span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="color: black">
-                          <li><a href="#" onclick="logout('{{ md5(session('username')) }}')">Logout</a></li>
+                        <ul class="dropdown-menu" id="profileDropdown">
+                          <li><a id="linkLogout" href="#" onclick="logout('{{ md5(session('username')) }}')">Logout</a></li>
                         </ul>
                     </li>
                 @else
