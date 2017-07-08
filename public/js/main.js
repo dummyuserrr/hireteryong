@@ -199,3 +199,21 @@ function deletePost(){
 		}
 	});
 }
+
+function toggleLike(postId){
+	var request = $.ajax({
+		url: "/demo/posts/togglelike",
+		type: "POST",
+		data: {
+			postId: postId,
+			_token: $("#globalcsrf").val(),
+		},
+		dataType: "html",
+		beforeSend: function(){
+			// just wait you fucker
+		},
+		success: function(){
+			$("#postStats"+postId).html(request.responseText);
+		}
+	});
+}

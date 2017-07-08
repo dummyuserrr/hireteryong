@@ -15,4 +15,8 @@ class User extends Model
     public function comments(){
     	return $this->hasMany(Comment::class);
     }
+
+    public function likes(){
+    	return $this->hasMany(Like::class);
+    }
 }

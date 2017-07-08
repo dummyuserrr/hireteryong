@@ -24,9 +24,11 @@
 					    <p class="posts">{{ $post->body }}</p>
 					  </div>
 					<div id="postStats{{ $post->id }}">
-						<small>3 likes &bull; {{ $post->comments->count() }} replies</small>
+						@if($post->likes->count() > 0 || $post->comments->count() > 0)
+							<small>{{ $post->likes->count() }} likes &bull; {{ $post->comments->count() }} replies</small> 
+						@endif
 					</div>
-					<div style="background-color: none"><small class="postactions"><a class="btn btn-xs"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
+					<div style="background-color: none"><small class="postactions"><a class="btn btn-xs" onclick="toggleLike('{{ $post->id }}')"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
 					 @if($post->user_id == session('id') && $post->user_id != 0)
 						&bull; <a class="btn btn-xs" data-toggle="modal" data-target="#deleteModal" onclick="setPostToDelete('{{ $post->id }}')"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 					 @endif

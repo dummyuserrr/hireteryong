@@ -22,3 +22,6 @@ Route::post('demo/posts/delete', 'PostsController@delete');
 // Comments
 Route::post('demo/posts/comment/add', 'CommentsController@addcomment');
 Route::post('demo/posts/comment/load', 'CommentsController@loadcomments');
+
+// Likes
+Route::post('demo/posts/togglelike', 'LikesController@toggleLike');
