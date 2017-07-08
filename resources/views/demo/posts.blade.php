@@ -43,6 +43,7 @@
 				</div>
 			</div>
 		@endforeach
+		{{ $posts->links() }}
 	@else
 		<div class="panel">
 			<div class="panel-body">
