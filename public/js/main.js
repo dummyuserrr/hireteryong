@@ -1,6 +1,7 @@
 // global vars
 var loadingIcon = "<center><img src='loading.svg' style='width: 100px; height: 100px;'></center>";
 var commentLoadingIcon = "<center><img src='loading.svg' style='width: 50px; height: 50px;'></center>";
+var postToDelete = 0;
 
 // jqueries
 $(document).ready(function(){	
@@ -62,13 +63,9 @@ $(document).ready(function(){
 			}
 		});
 	});
-
-	$("#submitpost").click(function(){
-		
-	});
 });
 
-// native javascript functions
+// native javascript functions because I'm still on the process of learning ReactJS
 function logout(usernameMD5){
 	var request = $.ajax({
 		url: "/demo/logout",
@@ -174,6 +171,29 @@ function loadComments(postId){
 		},
 		success: function(){
 			$("#commentsContent"+postId).html(request.responseText);
+		}
+	});
+}
+
+function setPostToDelete(postId){
+	postToDelete = postId;
+}
+
+function deletePost(){
+	var request = $.ajax({
+		url: "/demo/posts/delete",
+		type: "POST",
+		data: {
+			postId: postToDelete,
+			_token: $("#globalcsrf").val(),
+		},
+		dataType: "html",
+		beforeSend: function(){
+			// just wait you fucker
+		},
+		success: function(){
+			$("#postelement"+postToDelete).remove();
+			$("#deleteModal").modal("hide");
 		}
 	});
 }

@@ -17,6 +17,7 @@ Route::get('demo/verify', 'UsersController@verify');
 
 // Posts
 Route::post('demo/posts/add', 'PostsController@add');
+Route::post('demo/posts/delete', 'PostsController@delete');
 
 // Comments
 Route::post('demo/posts/comment/add', 'CommentsController@addcomment');

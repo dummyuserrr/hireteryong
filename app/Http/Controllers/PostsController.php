@@ -26,4 +26,14 @@ class PostsController extends Controller
             return view('demo.postToPrepend', compact('post'));
     	}
     }
+
+    public function delete(Request $r){
+        $p = new Post;
+        $post = $p->find($r->postId);
+        foreach($post->comments as $comment){
+            $comment->delete();
+        }
+        $post->delete();
+        return "ok na";
+    }
 }
