@@ -14,13 +14,14 @@ class LikesController extends Controller
     	if($checkLike){
     		$checkLike->delete();
     		$p = new Post;
-    		$post = $p->where('id', $r->id)->first();
+    		$post = $p->where('id', $r->postId)->first();
     		return view('demo.postStats', compact('post'));
     	}else{
     		$l->user_id = session('id');
     		$l->post_id = $r->postId;
+            $l->save();
     		$p = new Post;
-    		$post = $p->where('id', $r->id)->first(); 
+    		$post = $p->where('id', $r->postId)->first(); 
     		return view('demo.postStats', compact('post'));
     	}
     }

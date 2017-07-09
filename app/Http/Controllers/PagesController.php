@@ -7,6 +7,10 @@ use App\Post;
 
 class PagesController extends Controller
 {
+    public function test(){
+        return view('test');
+    }
+
     public function index(){
     	return view('index');
     }
