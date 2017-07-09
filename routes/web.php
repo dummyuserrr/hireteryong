@@ -8,6 +8,7 @@ Route::get('test', 'PagesController@test');
 Route::get('demo/', 'PagesController@demoIndex');
 Route::post('demo/home', 'PagesController@homepage');
 Route::post('demo/posts', 'PagesController@posts');
+Route::post('demo/myaccount', 'PagesController@myaccount');//->middelware('checksession');
 
 // Users
 Route::post('demo/register', 'UsersController@register'); 

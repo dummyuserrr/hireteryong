@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Post, App\User;
 
 class PagesController extends Controller
 {
@@ -12,11 +12,11 @@ class PagesController extends Controller
     }
 
     public function index(){
-    	return view('index');
+        return view('index');
     }
 
     public function demoIndex(){
-    	return view('demo.index');
+        return view('demo.index');
     }
 
     public function homepage(Request $r){
@@ -26,6 +26,16 @@ class PagesController extends Controller
     public function posts(Request $r){
         $p = new Post;
         $posts = $p->orderBy('created_at', 'desc')->get();
-    	return view('demo.posts', compact('posts'));
+        return view('demo.posts', compact('posts'));
+    }
+
+    public function myaccount(Request $r){
+        if(session()->has('status')){
+            $u = new User;
+            $user = $u->find(session('id'));
+            return view('demo.myprofile', compact('user'));
+        }else{
+            return view('errors.notloggedin');
+        }
     }
 }

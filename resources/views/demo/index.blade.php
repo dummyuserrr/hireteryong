@@ -21,7 +21,7 @@
 						<div class="list-group">
 							<a href="#home" class="list-group-item active" id="demohomepage">Demo Homepage</a>
 							<a href="#posts" class="list-group-item" id="viewposts">View Posts</a>
-							<a href="#" class="list-group-item">Third item</a>
+							<a href="#my_account" class="list-group-item" id="myaccount">My Account</a>
 						</div>
 					</div>
 				</div>

@@ -32,7 +32,13 @@
 							@endif
 						@endif
 					</div>
-					<div style="background-color: none"><small class="postactions"><a class="btn btn-xs" onclick="toggleLike('{{ $post->id }}')"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; <a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
+					<div style="background-color: none"><small class="postactions">
+					@if(session()->has('status'))
+						<a class="btn btn-xs" onclick="toggleLike('{{ $post->id }}')"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a> &bull; 
+					@else
+						<small><a href="#" data-toggle="modal" data-target="#login-modal">Login or Register</a> to like this post </small> &bull;
+					@endif
+					<a class="btn btn-xs" data-toggle="collapse" data-target="#demo{{ $post->id }}" onclick="loadComments('{{ $post->id }}')"><span class="glyphicon glyphicon-comment"></span> Reply</a>
 					 @if($post->user_id == session('id') && $post->user_id != 0)
 						&bull; <a class="btn btn-xs" data-toggle="modal" data-target="#deleteModal" onclick="setPostToDelete('{{ $post->id }}')"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 					 @endif
