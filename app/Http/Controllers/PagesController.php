@@ -11,6 +11,10 @@ class PagesController extends Controller
         return view('test');
     }
 
+    public function contactme(Request $r){
+        contactMe($r->name, $r->email, $r->number, $r->message);
+    }
+
     public function index(){
         return view('index');
     }

@@ -107,6 +107,29 @@ $(document).ready(function(){
 			},
 		});
 	}));
+
+	$("#contactForm").on('submit',(function(e) {
+		e.preventDefault();
+		var request = $.ajax({
+			url: "/",
+			type: "POST",
+			data: new FormData(this),
+			contentType: false,
+			cache: false,
+			processData:false,
+			beforeSend: function(data){
+				$("#btnContactMeSend").html('Sending...');
+				$("#btnContactMeSend").attr('disabled', true);
+			},
+			success: function(data){
+				$("#btnContactMeSend").html('Send');
+				$("#btnContactMeSend").removeAttr('disabled');
+				$("#success").html('Message sent. I hope it\'s not violent. Thank you.');
+				$("#success").attr('class', 'alert alert-info');
+				$("#contactForm").trigger("reset");
+			},
+		});
+	}));
 });
 
 // native javascript functions because I'm still on the process of learning ReactJS

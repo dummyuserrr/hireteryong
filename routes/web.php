@@ -2,6 +2,7 @@
 
 // Pages
 Route::get('/', 'PagesController@index');
+Route::post('/', 'PagesController@contactme');
 Route::get('demo/resetmypassword', 'PagesController@resetmypassword');
 // Route::get('test', 'PagesController@test');
 
