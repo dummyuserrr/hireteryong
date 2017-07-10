@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 	$("#myaccount").click(function(){
 		var request = $.ajax({
-			url: "/demo/myaccount/edit", // dev mode
+			url: "/demo/myaccount", // dev mode
 			type: "POST",
 			data: {
 				_token: $("#globalcsrf").val(),
