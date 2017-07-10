@@ -57,7 +57,8 @@ class UsersController extends Controller
             $user = $u->where('id', session('id'))->first();
             $user->update(['verificationstatus' => 'verified']);
             session()->put('verificationstatus', 'verified');
-            return "Your account has been verified!";
+            echo "Your account has been verified!";
+            return redirect('/demo');
         }else{
             return "Something went wrong";
         }
@@ -78,7 +79,7 @@ class UsersController extends Controller
         //     'password' => $r->password,
         //     'photo' => $photo
         // ]);
-        return "Piece of crap";
+        return "Hahaha! This function is now working yet.";
     }
 
     public function sendpasswordresetlink(Request $r){
