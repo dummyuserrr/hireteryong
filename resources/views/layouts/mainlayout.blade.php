@@ -40,9 +40,9 @@
                     <li class="page-scroll">
                         <a href="/demo" style="color: #e84343">PROCEED TO DEMO</a>
                     </li>
-                    <li class="page-scroll">
+                    <!-- <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
-                    </li>
+                    </li> -->
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
@@ -82,7 +82,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>Secret (To be provided<br>
+                        <p>Secret (to be provided<br>
                         upon request to avoid assassins)</p>
                     </div>
                     <div class="footer-col col-md-4">

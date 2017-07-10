@@ -23,7 +23,7 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <!-- <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -94,8 +94,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> -->
+<hr>
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -107,10 +107,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>The MAIN PURPOSE of this website is to demonstrate my web development skills. This was built using Laravel, PHP, CSS, Javascript, jQuery, MySQL, and AJAX. I will demonstrate all of the CRUDS functionalities here. I also included a real-time chat. You can view its entire source code at my <a href="https://github.com/dummyuserrr/hireteryong" style="color:#e84343">GitHub Repository</a></p>
+                    <p>The MAIN PURPOSE of this website is to demonstrate my web development skills. This was built using Laravel, PHP, CSS, Javascript, jQuery, MySQL, and AJAX. I will demonstrate all of the CRUDS functionalities here. I also included some advance functions. You can view its entire source code at my <a href="https://github.com/dummyuserrr/hireteryong" style="color:#e84343">GitHub Repository</a></p>
                 </div>
                 <div class="col-lg-4">
-                    <p>I built this website because I'm a fresh graduate and this will serve as my portfolio. I believe that having an online output of my work will increase my chance of getting hired.</p>
+                    <p>I built this website because I'm a fresh graduate and this will serve as my portfolio. I believe that having an online output of my work will increase my chance of getting hired. For <br>more information, <a style="color:#e84343" href="/demo">CLICK HERE</a> <br>to proceed to demo.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p>If you're wondering what does TERYONG<br> mean, it's my nickname. Please ignore the<br> informalities and the inappropriate <br>words used in this website. </p>

@@ -41,6 +41,7 @@ $(document).ready(function(){
 				$("#myaccount").attr('class', 'list-group-item');
 			},
 			success: function(){
+				document.title = "Posts - Hire Teryong";
 				$("#demo-content").html(request.responseText);
 			}
 		});
@@ -48,7 +49,7 @@ $(document).ready(function(){
 
 	$("#myaccount").click(function(){
 		var request = $.ajax({
-			url: "/demo/myaccount",
+			url: "/demo/myaccount/edit", // dev mode
 			type: "POST",
 			data: {
 				_token: $("#globalcsrf").val(),
@@ -61,6 +62,7 @@ $(document).ready(function(){
 				$("#myaccount").attr('class', 'list-group-item active');
 			},
 			success: function(){
+				document.title = "My Account - Hire Teryong";
 				$("#demo-content").html(request.responseText);
 			}
 		});
@@ -81,6 +83,7 @@ $(document).ready(function(){
 				$("#myaccount").attr('class', 'list-group-item');
 			},
 			success: function(){
+				document.title = "Demo Homepage - Hire Teryong";
 				$("#demo-content").html(request.responseText);
 			}
 		});
@@ -238,4 +241,62 @@ function toggleLike(postId){
 			$("#postStats"+postId).html(request.responseText);
 		}
 	});
+}
+
+function editAccount(){
+	var request = $.ajax({
+		url: "/demo/myaccount/edit",
+		type: "POST",
+		data: {
+			_token: $("#globalcsrf").val(),
+		},
+		dataType: "html",
+		beforeSend: function(){
+			$("#demo-content").html(loadingIcon);
+		},
+		success: function(){
+			document.title = "Edit Account - Hire Teryong";
+			$("#demo-content").html(request.responseText);
+		}
+	});
+}
+
+function updateAccount(){
+	var fullname = $("#eFullname").val();
+	var email = $("#eEmail").val();
+	var username = $("#eUsername").val();
+	var password = $("#epwd").val();
+	var password2 = $("#epwd2").val();
+	// var photo = $("#catcher").attr('src');
+	var photo = $("#img-upload").val();
+	var request = $.ajax({
+		url: "/demo/myaccount/edit/save",
+		type: "POST",
+		data: {
+			_token: $("#globalcsrf").val(),
+			fullname: 'wew',
+			email: email,
+			username: username,
+			password: password,
+			password2: password2,
+			photo: photo
+		},
+		dataType: "html",
+		beforeSend: function(){
+			$("#demo-content").html(loadingIcon);
+		},
+		success: function(){
+			$("#demo-content").html(request.responseText);
+		}
+	});
+}
+
+function readURL(input){
+	if (input.files && input.files[0]) {
+	    var reader = new FileReader();
+		reader.onload = function (e) {
+		  $('#catcher').attr('src', e.target.result)
+	    };	
+	  	reader.readAsDataURL(input.files[0]);
+	}
 }

@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>Secret (To be provided<br>
+                        <p>Secret (to be provided<br>
                         upon request to avoid assassins)</p>
                     </div>
                     <div class="footer-col col-md-4">

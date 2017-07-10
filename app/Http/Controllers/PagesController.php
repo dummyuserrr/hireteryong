@@ -33,7 +33,17 @@ class PagesController extends Controller
         if(session()->has('status')){
             $u = new User;
             $user = $u->find(session('id'));
-            return view('demo.myprofile', compact('user'));
+            return view('demo.myaccount', compact('user'));
+        }else{
+            return view('errors.notloggedin');
+        }
+    }
+
+    public function editaccount(){
+        if(session()->has('status')){
+            $u = new User;
+            $user = $u->find(session('id'));
+            return view('demo.editaccount', compact('user'));
         }else{
             return view('errors.notloggedin');
         }

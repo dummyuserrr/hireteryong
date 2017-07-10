@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-	protected $fillable = ['verificationstatus'];
+	protected $fillable = ['verificationstatus', 'fullname', 'username', 'email', 'password', 'photo'];
 	
     public function posts(){
     	return $this->hasMany(Post::class);

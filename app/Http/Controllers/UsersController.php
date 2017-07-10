@@ -63,6 +63,10 @@ class UsersController extends Controller
         }
     }
 
+    public function update(Request $r){
+        $photo = $r->file('photo')->store('tests');
+    }
+
     public function logout(Request $r){
     	if($r->username == md5(session('username'))){
     		session()->flush();
