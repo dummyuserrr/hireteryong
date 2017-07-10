@@ -2,11 +2,11 @@
 
 // Pages
 Route::get('/', 'PagesController@index');
-Route::get('demo/myaccount/resetpassword', 'PagesController@resetpassword');
+Route::get('demo/resetmypassword', 'PagesController@resetpassword');
 // Route::get('test', 'PagesController@test');
 
 // Demo Pages
-Route::get('demo/', 'PagesController@demoIndex');
+Route::get('demo', 'PagesController@demoIndex');
 Route::post('demo/home', 'PagesController@homepage');
 Route::post('demo/posts', 'PagesController@posts');
 Route::post('demo/myaccount/edit', 'PagesController@editaccount');//->middleware('checksession');

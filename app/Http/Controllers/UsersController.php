@@ -85,24 +85,25 @@ class UsersController extends Controller
         $u = new User;
         $user = $u->where('email', $r->email)->first();
         if($user){
-            $resetlink = md5(hash('sha512', $user->username).hash('ripemd160', $user->username).md5("passwordresetlink"));
+            $resetlink = md5(hash('sha512', $user->email).hash('ripemd160', $user->email).md5("passwordresetlink"));
             sendPasswordResetLink($user->email, $user->fullname, $resetlink);
             return "<br><center style='color:teal'>Password reset link sent. Please check your email.</center>";
         }else{
             return "<br><center style='color:red'>That email is not associated to any account. Please try again.</center>";
-        }    
-    }
+        }    }
 
     public function resetpassword(Request $r){
         $compare = md5(hash('sha512', $r->email).hash('ripemd160', $r->email).md5("passwordresetlink"));
-        if($compare == $r->l){
-            $u = new User;
-            $user = $u->where('email', $r->email)->first();
-            setSession($user);
-            return redirect('/demo/myaccount/resetpassword');
-        }else{
-            return "Something went wrong";
-        }
+        // if($compare == $r->l){
+        //     $u = new User;
+        //     $user = $u->where('email', $r->email)->first();
+        //     $this->setSession($user);
+        //     session()->put('resetpassword', 1);
+        //     return redirect('/demo/resetmypassword');
+        // }else{
+        //     return "Something went wrong (compare)";
+        // }
+        return $r->l;
     }
 
     public function logout(Request $r){

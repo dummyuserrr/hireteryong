@@ -48,4 +48,17 @@ class PagesController extends Controller
             return view('errors.notloggedin');
         }
     }
+
+    public function resetpassword(){
+        // if(session()->has('resetpassword')) {
+        //     if(session('resetpassword') == 1){
+        //         return view('demo.resetpassword');
+        //     }else{
+        //         return "Something went wrong";
+        //     }
+        // }else{
+        //     return "Something went wrong";
+        // }
+        return session('resetpassword');
+    }
 }

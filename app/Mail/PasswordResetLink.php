@@ -18,7 +18,7 @@ class PasswordResetLink extends Mailable
      *
      * @return void
      */
-    public function __construct($fullname, $resetlink, $email)
+    public function __construct($email, $fullname, $resetlink)
     {
         $this->resetlink = $resetlink;
         $this->fullname = $fullname;

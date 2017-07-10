@@ -7,5 +7,5 @@
     }
 
     function sendPasswordResetLink($email, $fullname, $resetlink){
-        Mail::to($email)->queue(new PasswordResetLink($fullname, $resetlink, $email));
+        Mail::to($email)->queue(new PasswordResetLink($email, $fullname, $resetlink));
     }
