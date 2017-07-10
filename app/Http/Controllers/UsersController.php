@@ -23,8 +23,8 @@ class UsersController extends Controller
     	$u->password = $password;
         $u->verificationstatus = 'unverified';
     	$u->save();
-        // $verificationcode = md5(hash('sha512', $r->username).hash('ripemd160', $r->username).md5("verificationcode"));
-        // sendVerificationMail($u->email, $u->fullname, $verificationcode);
+        $verificationcode = md5(hash('sha512', $r->username).hash('ripemd160', $r->username).md5("verificationcode"));
+        sendVerificationMail($u->email, $u->fullname, $verificationcode);
     	$this->setSession($u);
         return redirect('/demo');
     }
@@ -94,16 +94,15 @@ class UsersController extends Controller
 
     public function resetpassword(Request $r){
         $compare = md5(hash('sha512', $r->email).hash('ripemd160', $r->email).md5("passwordresetlink"));
-        // if($compare == $r->l){
-        //     $u = new User;
-        //     $user = $u->where('email', $r->email)->first();
-        //     $this->setSession($user);
-        //     session()->put('resetpassword', 1);
-        //     return redirect('/demo/resetmypassword');
-        // }else{
-        //     return "Something went wrong (compare)";
-        // }
-        return $r->l;
+        if($compare == $r->l){
+            $u = new User;
+            $user = $u->where('email', $r->email)->first();
+            $this->setSession($user);
+            session()->put('resetpassword', 1);
+            return redirect('/demo/resetmypassword');
+        }else{
+            return "Something went wrong (compare)";
+        }
     }
 
     public function logout(Request $r){

@@ -2,7 +2,7 @@
 
 // Pages
 Route::get('/', 'PagesController@index');
-Route::get('demo/resetmypassword', 'PagesController@resetpassword');
+Route::get('demo/resetmypassword', 'PagesController@resetmypassword');
 // Route::get('test', 'PagesController@test');
 
 // Demo Pages
