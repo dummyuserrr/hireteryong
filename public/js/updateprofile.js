@@ -8,12 +8,19 @@ $(document).ready(function (e) {
 			contentType: false,       // The content type used when sending data to the server.
 			cache: false,             // To unable request pages to be cached
 			processData:false,        // To send DOMDocument or non processed data file it is set to false
-			beforeSend: function(data){
-				$("#demo-content").html(loadingIcon);
-			},
+			// beforeSend: function(data){
+			// 	$("#demo-content").html(loadingIcon);
+			// },
 			success: function(data){  // A function to be called if request succeeds
 				$("#demo-content").html(request.responseText);
 			},
+			error: function(data){
+				var errors = "";
+				for(datos in data.responseJSON){
+					errors += data.responseJSON[datos]+'<br>';
+				}
+				$("#editAccountErrors").html('<font style="color:red">'+errors+'<br></font>');
+			}
 		});
 	}));
 });

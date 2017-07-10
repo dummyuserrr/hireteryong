@@ -66,20 +66,27 @@ class UsersController extends Controller
     }
 
     public function update(Request $r){
-        // TODO: validate and return results, update db, and update session values
         $this->validate($r, [
-            'password' => 'required'
+            'username' => 'required',
+            'fullname' => 'required',
+            'password' => 'required|min:6',
+            'password2' => 'required|same:password',
+            'email' => 'required|email',
+            'photo' => 'mimes:jpeg,bmp,png|max:5000'
         ]);
-        // $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
-        // $u = new User;
-        // $user = $u->where('id', session('id'))->first();
-        // $user->update([
-        //     'fullname' => $r->fullname,
-        //     'username' => $r->username,
-        //     'email' => $r->email,
-        //     'password' => $r->password,
-        //     'photo' => $photo
-        // ]);
+        $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
+        $u = new User;
+        $user = $u->where('id', session('id'))->first();
+        $user->update([
+            'fullname' => $r->fullname,
+            'username' => $r->username,
+            'email' => $r->email,
+            'password' => $r->password,
+            'photo' => $photo
+        ]);
+        session()->put('username', $r->username);
+        session()->put('fullname', $r->fullname);
+        return "<center>Changes has been saved</center>";
     }
 
     public function sendpasswordresetlink(Request $r){

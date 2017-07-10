@@ -80,8 +80,8 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>Secret (to be provided<br>
-                        upon request to avoid assassins)</p>
+                        <p>Secret (to be provided
+                        upon <br>request to avoid assassins)</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>SOCIAL MEDIA ACCOUNTS</h3>
@@ -102,7 +102,10 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About Me (Again)</h3>
-                        <p>Don't know what to put here</p>
+                        <p>*Insert cool stuffs here
+                        <br>
+                        (don't know what to put)
+                        </p>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
 			<b><span class="glyphicon glyphicon-check checks"></span> ADD A POST</b> - You can post anything. If you posted while logged in, your name will be shown. Otherwise, your name will be labeled as <b>STRANGER</b>.
 		</li>
 		<li>
-			<b><span class="glyphicon glyphicon-unchecked nochecks"></span> FILE UPLOAD</b> - You can upload your profile picture. 
+			<b><span class="glyphicon glyphicon-check checks"></span> FILE UPLOAD</b> - You can upload your profile picture. 
 		</li>
 		<li>
 			<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT PROFILE/POST</b> - This is very self-explanatory.
@@ -38,7 +38,7 @@
 	<h4>Here are the features (advanced functions) of this demo</h4>
 	<ul>
 		<li>
-			<b><span class="glyphicon glyphicon-check checks"></span> AJAX</b> - I believe that this function is what makes websites cool. The page will not reload when doing <b>SOME</b> actions (e.g. post, delete, etc)
+			<b><span class="glyphicon glyphicon-check checks"></span> SPA (SINGLE-PAGE-APPLICATION) WANNABE</b> - I believe that this function is what makes websites cool. The page will not reload when doing <b>SOME</b> actions (e.g. post, delete, etc)
 		</li>
 		<li>
 			<b><span class="glyphicon glyphicon-unchecked nochecks"></span> CHAT</b> - Yeah, I added a public chat on this website. Please behave. 
