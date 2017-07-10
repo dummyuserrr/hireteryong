@@ -71,6 +71,7 @@
     <script src="js/freelancer.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="loginmodal/loginmodal.js"></script>
+    <script type="text/javascript" src="js/validator.min.js"></script>
     <input type="hidden" id="globalcsrf" value="{{ csrf_token() }}">
 </body>
 <footer class="text-center footer">

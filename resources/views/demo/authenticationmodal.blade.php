@@ -56,7 +56,7 @@
                                 <input id="register_fullname" class="form-control" type="text" placeholder="Fullname" name="fullname" required><br>
                                 <input id="register_email" class="form-control" type="email" placeholder="Email" name="email" required><br>
                                 <input id="register_username" class="form-control" type="text" placeholder="Username" name="username" required><br>
-                                <input id="register_password" class="form-control" type="password" placeholder="Password" name="password" required><br>
+                                <input id="register_password" class="form-control" type="password" placeholder="Password (UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
                                 <input id="register_password2" class="form-control" type="password" placeholder="Re-enter Password" name="password2" required>
                             </div>
             			</div>
