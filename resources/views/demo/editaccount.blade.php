@@ -1,4 +1,5 @@
-<!-- <form method="post" enctype="multipart/form-data" id="frmUpdateAccount" onsubmit="testing()"> -->
+<form method="post" enctype="multipart/form-data" id="frmUpdateAccount">
+  {{ csrf_field() }}
   <div class="form-horizontal">
     <div class="form-group">
       <label class="control-label col-sm-2" for="fullname">Fullname:</label>
@@ -43,7 +44,7 @@
         <button type="submit" class="btn btn-primary" onclick="updateAccount()">Save</button>
     </div>
   </div>
-<!-- </form> -->
+</form>
 
 <script type="text/javascript">
   $(document).ready( function() {
@@ -83,4 +84,4 @@
   });
 </script>
 
-<img src="" id="catcher" hidden>
+<script type="text/javascript" src="js/updateprofile.js"></script>

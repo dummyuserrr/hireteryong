@@ -64,7 +64,20 @@ class UsersController extends Controller
     }
 
     public function update(Request $r){
-        $photo = $r->file('photo')->store('tests');
+        $this->validate($r, [
+            'password' => 'required'
+        ]);
+        // if(count)
+        // $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
+        // $u = new User;
+        // $user = $u->where('id', session('id'))->first();
+        // $user->update([
+        //     'fullname' => $r->fullname,
+        //     'username' => $r->username,
+        //     'email' => $r->email,
+        //     'password' => $r->password,
+        //     'photo' => $photo
+        // ]);
     }
 
     public function logout(Request $r){

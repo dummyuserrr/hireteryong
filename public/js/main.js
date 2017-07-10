@@ -261,35 +261,36 @@ function editAccount(){
 	});
 }
 
-function updateAccount(){
-	var fullname = $("#eFullname").val();
-	var email = $("#eEmail").val();
-	var username = $("#eUsername").val();
-	var password = $("#epwd").val();
-	var password2 = $("#epwd2").val();
-	// var photo = $("#catcher").attr('src');
-	var photo = $("#img-upload").val();
-	var request = $.ajax({
-		url: "/demo/myaccount/edit/save",
-		type: "POST",
-		data: {
-			_token: $("#globalcsrf").val(),
-			fullname: 'wew',
-			email: email,
-			username: username,
-			password: password,
-			password2: password2,
-			photo: photo
-		},
-		dataType: "html",
-		beforeSend: function(){
-			$("#demo-content").html(loadingIcon);
-		},
-		success: function(){
-			$("#demo-content").html(request.responseText);
-		}
-	});
-}
+// function updateAccount(){
+// 	var fullname = $("#eFullname").val();
+// 	var email = $("#eEmail").val();
+// 	var username = $("#eUsername").val();
+// 	var password = $("#epwd").val();
+// 	var password2 = $("#epwd2").val();
+// 	var photo = document.getElementById('imgInp').files[0];
+// 	var form = new FormData()
+// 	var request = $.ajax({
+// 		url: "/demo/myaccount/edit/save",
+// 		type: "POST",
+// 		// data: {
+// 		// 	_token: $("#globalcsrf").val(),
+// 		// 	fullname: 'wew',
+// 		// 	email: email,
+// 		// 	username: username,
+// 		// 	password: password,
+// 		// 	password2: password2,
+// 		// 	photo: photo
+// 		// },
+// 		data: new FormData
+// 		dataType: "html",
+// 		beforeSend: function(){
+// 			$("#demo-content").html(loadingIcon);
+// 		},
+// 		success: function(){
+// 			$("#demo-content").html(request.responseText);
+// 		}
+// 	});
+// }
 
 function readURL(input){
 	if (input.files && input.files[0]) {
