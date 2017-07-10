@@ -91,3 +91,11 @@ hr{
 	width: 50%;
 	height: 50%;
 }
+
+.checks{
+	color: green;
+}
+
+.nochecks{
+	color: red;
+}

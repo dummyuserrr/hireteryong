@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Contracts\Validation\Validator;
 
 class UsersController extends Controller
 {
@@ -66,9 +67,9 @@ class UsersController extends Controller
 
     public function update(Request $r){
         // TODO: validate and return results, update db, and update session values
-        // $this->validate($r, [
-        //     'password' => 'required'
-        // ]);
+        $this->validate($r, [
+            'password' => 'required'
+        ]);
         // $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
         // $u = new User;
         // $user = $u->where('id', session('id'))->first();
@@ -79,7 +80,6 @@ class UsersController extends Controller
         //     'password' => $r->password,
         //     'photo' => $photo
         // ]);
-        return "Hahaha! This function is now working yet.";
     }
 
     public function sendpasswordresetlink(Request $r){
