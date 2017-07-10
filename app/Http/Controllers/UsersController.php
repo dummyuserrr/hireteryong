@@ -23,7 +23,7 @@ class UsersController extends Controller
     	$u->password = $password;
         $u->verificationstatus = 'unverified';
     	$u->save();
-        // $verificationcode = md5(hash('sha512', $r->username).hash('ripemd160', $r->username).md5("protein is life"));
+        // $verificationcode = md5(hash('sha512', $r->username).hash('ripemd160', $r->username).md5("verificationcode"));
         // sendVerificationMail($u->email, $u->fullname, $verificationcode);
     	$this->setSession($u);
         return redirect('/demo');
@@ -51,7 +51,7 @@ class UsersController extends Controller
     }
 
     public function verify(Request $r){
-        $code = md5(hash('sha512', session('username')).hash('ripemd160', session('username')).md5("protein is life"));
+        $code = md5(hash('sha512', session('username')).hash('ripemd160', session('username')).md5("verificationcode"));
         if($r->c == $code){
             $u = new User;
             $user = $u->where('id', session('id'))->first();
@@ -64,7 +64,7 @@ class UsersController extends Controller
     }
 
     public function update(Request $r){
-        // TODO: validate and return results
+        // TODO: validate and return results, update db, and update session values
         // $this->validate($r, [
         //     'password' => 'required'
         // ]);
@@ -78,7 +78,31 @@ class UsersController extends Controller
         //     'password' => $r->password,
         //     'photo' => $photo
         // ]);
-        return "gago";
+        return "Piece of crap";
+    }
+
+    public function sendpasswordresetlink(Request $r){
+        $u = new User;
+        $user = $u->where('email', $r->email)->first();
+        if($user){
+            $resetlink = md5(hash('sha512', $user->username).hash('ripemd160', $user->username).md5("passwordresetlink"));
+            sendPasswordResetLink($user->email, $user->fullname, $resetlink);
+            return "<br><center style='color:teal'>Password reset link sent. Please check your email.</center>";
+        }else{
+            return "<br><center style='color:red'>That email is not associated to any account. Please try again.</center>";
+        }    
+    }
+
+    public function resetpassword(Request $r){
+        $compare = md5(hash('sha512', $r->email).hash('ripemd160', $r->email).md5("passwordresetlink"));
+        if($compare == $r->l){
+            $u = new User;
+            $user = $u->where('email', $r->email)->first();
+            setSession($user);
+            return redirect('/demo/myaccount/resetpassword');
+        }else{
+            return "Something went wrong";
+        }
     }
 
     public function logout(Request $r){

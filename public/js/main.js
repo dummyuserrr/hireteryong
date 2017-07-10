@@ -88,6 +88,25 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$("#lost-form").on('submit',(function(e) {
+		e.preventDefault();
+		var request = $.ajax({
+			url: "/demo/sendpasswordresetlink",
+			type: "POST",
+			data: new FormData(this),
+			contentType: false,
+			cache: false,
+			processData:false,
+			beforeSend: function(data){
+				$("#btnSendPasswordResetLink").attr('disabled', 'true');
+			},
+			success: function(data){
+				$("#lost-password-message").html(request.responseText);
+				$("#btnSendPasswordResetLink").removeAttr('disabled');
+			},
+		});
+	}));
 });
 
 // native javascript functions because I'm still on the process of learning ReactJS
@@ -259,45 +278,4 @@ function editAccount(){
 			$("#demo-content").html(request.responseText);
 		}
 	});
-}
-
-// function updateAccount(){
-// 	var fullname = $("#eFullname").val();
-// 	var email = $("#eEmail").val();
-// 	var username = $("#eUsername").val();
-// 	var password = $("#epwd").val();
-// 	var password2 = $("#epwd2").val();
-// 	var photo = document.getElementById('imgInp').files[0];
-// 	var form = new FormData()
-// 	var request = $.ajax({
-// 		url: "/demo/myaccount/edit/save",
-// 		type: "POST",
-// 		// data: {
-// 		// 	_token: $("#globalcsrf").val(),
-// 		// 	fullname: 'wew',
-// 		// 	email: email,
-// 		// 	username: username,
-// 		// 	password: password,
-// 		// 	password2: password2,
-// 		// 	photo: photo
-// 		// },
-// 		data: new FormData
-// 		dataType: "html",
-// 		beforeSend: function(){
-// 			$("#demo-content").html(loadingIcon);
-// 		},
-// 		success: function(){
-// 			$("#demo-content").html(request.responseText);
-// 		}
-// 	});
-// }
-
-function readURL(input){
-	if (input.files && input.files[0]) {
-	    var reader = new FileReader();
-		reader.onload = function (e) {
-		  $('#catcher').attr('src', e.target.result)
-	    };	
-	  	reader.readAsDataURL(input.files[0]);
-	}
 }

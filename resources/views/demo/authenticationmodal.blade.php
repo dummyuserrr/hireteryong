@@ -28,19 +28,21 @@
                     <!-- End # Login Form -->
                     
                     <!-- Begin | Lost Password Form -->
-                    <form id="lost-form" style="display:none;">
+                    <form id="lost-form" style="display:none;" method="post">
+                        {{ csrf_field() }}
     	    		    <div class="modal-body">
 		    				<h5>Type your email</h5>
-		    				<input id="lost_email" class="form-control" type="text" placeholder="johndoe@email.com)" required>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="johndoe@email.com)" name="email">
+                            <span id="lost-password-message"></span>
             			</div>
 		    		    <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block" id="btnSendPasswordResetLink">Send</button>
                             </div>
                             <center>
                                 <a id="lost_login_btn" type="button" class="btn btn-link">Log In</a>|
                                 <a id="lost_register_btn" type="button" class="btn btn-link">Register</a>
-                            </center>
+                            </center><br>
 		    		    </div>
                     </form>
                     <!-- End | Lost Password Form -->

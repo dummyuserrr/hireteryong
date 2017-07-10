@@ -1,0 +1,2 @@
+<h3>Hello {{ $fullname }}!</h3>
+<p>Here's your password reset link: <a href="http://hireteryong.tk/demo/resetpassword?email={{ $email }}&l={{ $resetlink }}">http://hireteryong.tk/demo/resetpassword?email={{ $email }}&l={{ $resetlink }}</a></p>
