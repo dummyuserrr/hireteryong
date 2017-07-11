@@ -74,19 +74,29 @@ class UsersController extends Controller
             'email' => 'required|email',
             'photo' => 'mimes:jpeg,bmp,png|max:5000'
         ]);
-        $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
+        $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("report mo pag nahack please"));
         $u = new User;
         $user = $u->where('id', session('id'))->first();
-        $user->update([
-            'fullname' => $r->fullname,
-            'username' => $r->username,
-            'email' => $r->email,
-            'password' => $r->password,
-            'photo' => $photo
-        ]);
+        if($r->photo){
+            $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
+            $user->update([
+                'fullname' => $r->fullname,
+                'username' => $r->username,
+                'email' => $r->email,
+                'password' => $password,
+                'photo' => $photo
+            ]); 
+        }else{
+            $user->update([
+                'fullname' => $r->fullname,
+                'username' => $r->username,
+                'email' => $r->email,
+                'password' => $password,
+            ]); 
+        }
         session()->put('username', $r->username);
         session()->put('fullname', $r->fullname);
-        return "<center>Changes has been saved</center>";
+        return "<center>Changes has been saved.</center>";
     }
 
     public function sendpasswordresetlink(Request $r){

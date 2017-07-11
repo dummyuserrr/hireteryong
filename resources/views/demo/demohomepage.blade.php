@@ -26,7 +26,10 @@
 			<b><span class="glyphicon glyphicon-check checks"></span> FILE UPLOAD</b> - You can upload your profile picture. 
 		</li>
 		<li>
-			<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT PROFILE/POST</b> - This is very self-explanatory.
+			<b><span class="glyphicon glyphicon-check checks"></span> EDIT PROFILE</b> - This is very self-explanatory.
+		</li>
+		<li>
+			<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT POST</b> - This one too.
 		</li>
 		<li>
 			<b><span class="glyphicon glyphicon-check checks"></span> DELETE POST</b> - You can delete your post or your comment if you're logged in. And it's NOT actually deleted. It will just be archived.

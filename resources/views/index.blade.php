@@ -15,7 +15,7 @@
                         <h1 class="name">Deither Corpuz</h1>
                         <hr class="star-light">
                         <span class="skills">Web Developer &bull; Programmer &bull; Something Like That<br>
-                        <b style="color: #ad0808"><u>NEVER LEAVE THIS WEBSITE WITHOUT GOING TO DEMO</u></b></span>
+                        <b style="color: #ad0808"><u>DO NOT LEAVE THIS WEBSITE WITHOUT CHECKING THE <a href="/demo" style="color:red">DEMO</a></u></b></span>
                     </div>
                 </div>
             </div>
