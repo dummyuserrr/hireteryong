@@ -18,6 +18,12 @@ class PagesController extends Controller
     }
 
     public function contactme(Request $r){
+        $this->validate($r, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'number' => 'required',
+            'message' => 'required'
+        ]);
         contactMe($r->name, $r->email, $r->number, $r->message);
     }
 

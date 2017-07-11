@@ -128,6 +128,16 @@ $(document).ready(function(){
 				$("#success").attr('class', 'alert alert-info');
 				$("#contactForm").trigger("reset");
 			},
+			error: function(data){
+				var errors = "";
+				for(datos in data.responseJSON){
+					errors += "<li>"+data.responseJSON[datos];
+				}
+				$("#btnContactMeSend").html('Send');
+				$("#btnContactMeSend").removeAttr('disabled');
+				$("#success").html('<font style="color:red"><ul>'+errors+'</ul></font>');
+				$("#success").attr('class', 'alert alert-danger');
+			}
 		});
 	}));
 });
