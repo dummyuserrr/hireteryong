@@ -9,11 +9,12 @@ use Image;
 class PagesController extends Controller
 {
     public function test(){
-        // return view('test');
-        $image = Image::make('dagupan.png')->resize(200, 200, function ($c) {
-            $c->aspectRatio();
-            $c->upsize();
-        });
+        return view('test');
+        // $image = Image::make(file_get_contents('logo.png'))->resize(200, 200, function ($c) {
+        //     $c->aspectRatio();
+        //     $c->upsize();
+        // });
+        // $pic = $image->response();
     }
 
     public function contactme(Request $r){

@@ -73,21 +73,30 @@ class UsersController extends Controller
             'password' => 'required|min:6',
             'password2' => 'required|same:password',
             'email' => 'required|email',
-            'photo' => 'mimes:jpeg,bmp,png|max:5000'
+            'photo' => 'mimes:jpeg,bmp,png|max:2048'
         ]);
         $password = md5(hash('sha512', $r->password).hash('ripemd160', $r->password).md5("report mo pag nahack please"));
         $u = new User;
         $user = $u->where('id', session('id'))->first();
         if($r->photo){
-            $interventedImage = Image::make($r->file('photo'))->resize(300,200);
-            $photo = $interventedImage->store(md5(session('id'))."/profilepicture");
+
+            // $file = $r->file('photo');
+            // $image = Image::make($file)->resize(200, 200, function ($c) {
+            //     $c->aspectRatio();
+            //     $c->upsize();
+            // });
+            // $profilepicturename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME).'.'.$file->getClientOriginalExtension();
+            // $image->save(public_path(session('id')."/profilepicture/".$profilepicture));
+            // $imagedir = $image->dirname.'/'.$image->basename;
+            // return $imagedir;
+            $photo = $r->file('photo')->store(session('id')."/profilepicture");
             $user->update([
                 'fullname' => $r->fullname,
                 'username' => $r->username,
                 'email' => $r->email,
                 'password' => $password,
                 'photo' => $photo
-            ]); 
+            ]);
         }else{
             $user->update([
                 'fullname' => $r->fullname,
