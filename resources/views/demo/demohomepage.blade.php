@@ -45,9 +45,9 @@
 	<li>
 		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> CHAT</b> - Yeah, I added a public chat on this website. Please behave. 
 	</li>
-	<!-- <li>
-		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> IMAGE COMPRESSION</b> - To conserve space, the size of the profile picture you will upload will decrease. 
-	</li> -->
+	<li>
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> IMAGE COMPRESSION</b> - To conserve space and optimize loading, the size of the profile picture you will upload will decrease. 
+	</li>
 	<li>
 		<b><span class="glyphicon glyphicon-check checks"></span> COMMENT</b> - Users can comment on posts.
 	</li>
