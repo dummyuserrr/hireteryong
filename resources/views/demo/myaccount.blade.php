@@ -3,7 +3,7 @@
     <label class="control-label col-sm-2" for="fullname">Profile Picture:</label>
     <div class="col-sm-10">
       @if($user->photo)
-        <img src="storage/{{ $user->photo }}" id="profilePicture" class="img-responsive">
+        <img src="storage/user_photos_compressed/{{ $user->photo }}" id="profilePicture" class="img-responsive">
       @else
         <p>You have no profile picture</p>
       @endif

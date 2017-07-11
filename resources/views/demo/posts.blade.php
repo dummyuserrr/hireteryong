@@ -11,7 +11,11 @@
 				<div class="panel-body">
 					<div class="media">
 					  <div class="media-left">
-					    <img src="img/profile.png" class="media-object" style="width:60px">
+					  @if($post->user->photo)
+					    <img src="storage/user_photos_thumbnails/{{ $post->user->photo }}" class="media-object img-circle" style="width:60px">
+					  @else
+					  	<img src="img/profile.png" class="media-object img-circle" style="width:60px">
+					  @endif
 					  </div>
 					  <div class="media-body">
 					    <h5 class="media-heading">

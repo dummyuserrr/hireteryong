@@ -79,23 +79,28 @@ class UsersController extends Controller
         $u = new User;
         $user = $u->where('id', session('id'))->first();
         if($r->photo){
+            $photo = $r->file('photo');
+            $imagename = time().md5(session('id')).'.'.$photo->getClientOriginalExtension(); 
+       
+            $destinationPath = storage_path('app/public/user_photos_thumbnails');
+            $thumb_img = Image::make($photo->getRealPath())->resize(200, 200);
+            $thumb_img->save($destinationPath.'/'.$imagename,80);
 
-            // $file = $r->file('photo');
-            // $image = Image::make($file)->resize(200, 200, function ($c) {
-            //     $c->aspectRatio();
-            //     $c->upsize();
-            // });
-            // $profilepicturename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME).'.'.$file->getClientOriginalExtension();
-            // $image->save(public_path(session('id')."/profilepicture/".$profilepicture));
-            // $imagedir = $image->dirname.'/'.$image->basename;
-            // return $imagedir;
-            $photo = $r->file('photo')->store(session('id')."/profilepicture");
+            $destinationPath = storage_path('app/public/user_photos_compressed');
+            $compressed_img = Image::make($photo->getRealPath())->resize(400, 400, function($c){
+                $c->aspectRatio();
+                $c->upsize();
+            });
+            $compressed_img->save($destinationPath.'/'.$imagename,80);
+            
+            $destinationPath = storage_path('app/public/user_photos_normal');
+            $photo->move($destinationPath, $imagename);
             $user->update([
                 'fullname' => $r->fullname,
                 'username' => $r->username,
                 'email' => $r->email,
                 'password' => $password,
-                'photo' => $photo
+                'photo' => $imagename
             ]);
         }else{
             $user->update([
