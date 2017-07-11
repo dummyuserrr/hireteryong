@@ -11,7 +11,7 @@
 				<div class="panel-body">
 					<div class="media">
 					  <div class="media-left">
-					  @if($post->user->photo)
+					  @if($post->user_id != 0 && $post->user->photo)
 					    <img src="storage/user_photos_thumbnails/{{ $post->user->photo }}" class="media-object img-circle" style="width:60px">
 					  @else
 					  	<img src="img/profile.png" class="media-object img-circle" style="width:60px">
