@@ -2,7 +2,7 @@
 	<div class="panel-body">
 		<div class="media">
 		  <div class="media-left">
-		  @if($post->user->photo)
+		  @if(session()->has('status'))
 		    <img src="storage/user_photos_compressed/{{ $post->user->photo }}" class="media-object img-circle" style="width:60px">
 		  @else
 		  	<img src="img/profile.png" class="media-object img-circle" style="width:60px">
