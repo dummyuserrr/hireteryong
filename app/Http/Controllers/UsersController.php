@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Contracts\Validation\Validator;
+use Image;
 
 class UsersController extends Controller
 {
@@ -78,7 +79,8 @@ class UsersController extends Controller
         $u = new User;
         $user = $u->where('id', session('id'))->first();
         if($r->photo){
-            $photo = $r->file('photo')->store(md5(session('id'))."/profilepicture");
+            $interventedImage = Image::make($r->file('photo'))->resize(300,200);
+            $photo = $interventedImage->store(md5(session('id'))."/profilepicture");
             $user->update([
                 'fullname' => $r->fullname,
                 'username' => $r->username,

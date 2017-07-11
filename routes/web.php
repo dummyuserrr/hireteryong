@@ -4,7 +4,7 @@
 Route::get('/', 'PagesController@index');
 Route::post('/', 'PagesController@contactme');
 Route::get('demo/resetmypassword', 'PagesController@resetmypassword');
-// Route::get('test', 'PagesController@test');
+Route::get('test', 'PagesController@test');
 
 // Demo Pages
 Route::get('demo', 'PagesController@demoIndex');

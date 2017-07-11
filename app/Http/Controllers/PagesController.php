@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post, App\User;
+use Image;
 
 class PagesController extends Controller
 {
     public function test(){
-        return view('test');
+        // return view('test');
+        $image = Image::make('dagupan.png')->resize(200, 200, function ($c) {
+            $c->aspectRatio();
+            $c->upsize();
+        });
     }
 
     public function contactme(Request $r){
