@@ -1,21 +1,13 @@
 <div id="publicChatContent">
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	@foreach($chats as $chat)
+		<b class="chatsenders">
+			@if($chat->user_id == 0)
+				Stranger 
+			@else
+				{{ $chat->user->fullname }} 
+			@endif
+		</b><small class="chatTimes">({{ $chat->created_at->diffForHumans() }})</small>: <span>{{ $chat->body }}</span><br>
+	@endforeach
 </div>
 <div id="publicChatFooter">
 	<form method="post" id="frmPublicChat">

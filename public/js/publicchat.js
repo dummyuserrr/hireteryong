@@ -1,7 +1,4 @@
 $(document).ready(function (e) {
-	$("#publicChatContent").animate({ scrollTop: $(document).height() }, "slow");
-  	return false;
-
 	$("#frmPublicChat").on('submit',(function(e) {
 		e.preventDefault();
 		var request = $.ajax({
@@ -30,4 +27,6 @@ $(document).ready(function (e) {
 			}
 		});
 	}));
+
+	$("#publicChatContent").animate({ scrollTop: $(document).height() }, "slow");
 });

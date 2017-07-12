@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post, App\User;
+use App\Post, App\User, App\Chat;
 use Image;
 
 class PagesController extends Controller
@@ -56,7 +56,9 @@ class PagesController extends Controller
     }
 
     public function publicchat(Request $r){
-        return view('demo.publicchat');
+        $c = new Chat;
+        $chats = $c->all();
+        return view('demo.publicchat', compact('chats'));
     }
 
     public function editaccount(){
