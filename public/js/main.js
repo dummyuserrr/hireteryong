@@ -1,4 +1,4 @@
-// global vars
+// global vars here
 var loadingIcon = "<center><img src='loading.svg' style='width: 100px; height: 100px;'></center>";
 var commentLoadingIcon = "<center><img src='loading.svg' style='width: 50px; height: 50px;'></center>";
 var postToDelete = 0;
