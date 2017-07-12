@@ -36,3 +36,4 @@ Route::post('demo/posts/togglelike', 'LikesController@toggleLike');
 
 // Chats
 Route::post('demo/publicchat/send', 'ChatsController@send');
+Route::post('demo/publicchat/refresh', 'ChatsController@refresh');

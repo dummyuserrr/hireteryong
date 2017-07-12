@@ -21,4 +21,10 @@ class ChatsController extends Controller
 
     	return view('demo.chatToAppend', compact('c'));
     }
+
+    public function refresh(Request $r){
+        $c = new Chat;
+        $chats = $c->all();
+        return view('demo.chatsonly', compact('chats'));
+    }
 }

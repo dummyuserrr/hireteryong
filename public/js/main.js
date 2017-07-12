@@ -5,7 +5,7 @@ var postToDelete = 0;
 var refreshChatsTimeOut = 0;
 
 // jqueries
-$(document).ready(function(){	
+$(document).ready(function(){
 	$("#btnLogin").click(function(){
 		login();
 	});
@@ -27,6 +27,7 @@ $(document).ready(function(){
 	});
 
 	$("#viewposts").click(function(){
+		clearTimeout(refreshChatsTimeOut);
 		var request = $.ajax({
 			url: "/demo/posts",
 			type: "POST",
@@ -50,6 +51,7 @@ $(document).ready(function(){
 	});
 
 	$("#myaccount").click(function(){
+		clearTimeout(refreshChatsTimeOut);
 		var request = $.ajax({
 			url: "/demo/myaccount", // dev mode
 			type: "POST",
@@ -72,6 +74,7 @@ $(document).ready(function(){
 	});
 
 	$("#demohomepage").click(function(){
+		clearTimeout(refreshChatsTimeOut);
 		var request = $.ajax({
 			url: "/demo/home",
 			type: "POST",
@@ -173,6 +176,7 @@ $(document).ready(function(){
 
 // native javascript functions because I'm still on the process of learning ReactJS
 function logout(usernameMD5){
+	clearTimeout(refreshChatsTimeOut);
 	var request = $.ajax({
 		url: "/demo/logout",
 		type: "POST",
@@ -343,6 +347,21 @@ function editAccount(){
 }
 
 function refreshChats(){
+	var request = $.ajax({
+		url: "/demo/publicchat/refresh",
+		type: "POST",
+		data: {
+			_token: $("#globalcsrf").val(),
+		},
+		dataType: "html",
+		beforeSend: function(){
+
+		},
+		success: function(){
+			document.title = "Public Chat - Hire Teryong";
+			$("#publicChatContent").html(request.responseText);
+		}
+	});
 	refreshChatsTimeOut = setTimeout( function(){
 		refreshChats();
 	}, 5000);
