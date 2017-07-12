@@ -39,6 +39,7 @@ return array(
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+    'CreateChatsTable' => $baseDir . '/database/migrations/2017_07_12_133652_create_chats_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2017_07_08_032741_create_comments_table.php',
     'CreateLikesTable' => $baseDir . '/database/migrations/2017_07_08_110942_create_likes_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2017_07_07_142911_create_posts_table.php',

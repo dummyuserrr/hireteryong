@@ -29,10 +29,11 @@
 </div>
 <div id="publicChatFooter">
 	<form method="post" id="frmPublicChat">
+		{{ csrf_field() }}
 	  <div class="input-group">
-	    <input type="text" class="form-control" placeholder="Type your message here">
+	    <input type="text" class="form-control" placeholder="Type your message here" name="message">
 	    <div class="input-group-btn">
-	      <button class="btn btn-primary" type="submit">
+	      <button class="btn btn-primary" type="submit" id="btnSubmitChat">
 	        <i class="glyphicon glyphicon-share-alt"></i> Send
 	      </button>
 	    </div>

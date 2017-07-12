@@ -33,3 +33,6 @@ Route::post('demo/posts/comment/load', 'CommentsController@loadcomments');
 
 // Likes
 Route::post('demo/posts/togglelike', 'LikesController@toggleLike');
+
+// Chats
+Route::post('demo/publicchat/send', 'ChatsController@send');
