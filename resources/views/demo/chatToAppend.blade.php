@@ -1,0 +1,1 @@
+<b class="chatsenders">Teryong </b><small class="chatTimes">({{ $c->created_at->diffForHumans() }})</small>: <span>{{ $c->body }}</span><br>

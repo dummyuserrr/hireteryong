@@ -11,6 +11,14 @@ class ChatsController extends Controller
     	$this->validate($r, [
     		'message' => 'required'
     	]);
-    	return $r->all();
+    	
+    	$c = new Chat;
+    	if(session()->has('status')){
+    		$c->user_id = session('id');
+    	}
+    	$c->body = $r->message;
+    	$c->save();
+
+    	return view('demo.chatToAppend', compact('c'));
     }
 }

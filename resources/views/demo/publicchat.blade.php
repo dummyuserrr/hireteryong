@@ -1,37 +1,27 @@
 <div id="publicChatContent">
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
-	<b class="chatsenders">Teryong: </b><span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
+	<b class="chatsenders">Teryong </b><small class="chatTimes">(1 min ago)</small>: <span>This feature is now under construction</span><br>
 </div>
 <div id="publicChatFooter">
 	<form method="post" id="frmPublicChat">
 		{{ csrf_field() }}
 	  <div class="input-group">
-	    <input type="text" class="form-control" placeholder="Type your message here" name="message">
+	    <input type="text" class="form-control" placeholder="Type your message here" name="message" id="chatBody">
 	    <div class="input-group-btn">
 	      <button class="btn btn-primary" type="submit" id="btnSubmitChat">
 	        <i class="glyphicon glyphicon-share-alt"></i> Send

@@ -1,4 +1,7 @@
 $(document).ready(function (e) {
+	$("#publicChatContent").animate({ scrollTop: $(document).height() }, "slow");
+  	return false;
+
 	$("#frmPublicChat").on('submit',(function(e) {
 		e.preventDefault();
 		var request = $.ajax({
@@ -12,8 +15,10 @@ $(document).ready(function (e) {
 				$("#btnSubmitChat").attr('disabled', true);
 			},
 			success: function(data){
-				alert(request.responseText);
+				$("#publicChatContent").append(request.responseText);
 				$("#btnSubmitChat").removeAttr('disabled');
+				$('#publicChatContent').scrollTop($('#publicChatContent')[0].scrollHeight);
+				$("#chatBody").val('');
 			},
 			error: function(data){
 				var errors = "";
@@ -24,6 +29,5 @@ $(document).ready(function (e) {
 				$("#btnSubmitChat").removeAttr('disabled');
 			}
 		});
-		// alert('This feature is under construction and will be available soon');
 	}));
 });
