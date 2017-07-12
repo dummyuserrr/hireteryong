@@ -11,9 +11,9 @@ class UsersController extends Controller
 {
     public function register(Request $r){
     	$this->validate($r, [
-    		'fullname' => 'required',
+    		'fullname' => 'required|max:35',
     		'email' => 'required|unique:users|email',
-    		'username' => 'required|unique:users',
+    		'username' => 'required|unique:users|max:15',
     		'password' => 'required|min:6',
     		'password2' => 'required|same:password'
     	]);
