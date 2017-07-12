@@ -2,6 +2,7 @@
 var loadingIcon = "<center><img src='loading.svg' style='width: 100px; height: 100px;'></center>";
 var commentLoadingIcon = "<center><img src='loading.svg' style='width: 50px; height: 50px;'></center>";
 var postToDelete = 0;
+var refreshChatsTimeOut = 0;
 
 // jqueries
 $(document).ready(function(){	
@@ -110,6 +111,9 @@ $(document).ready(function(){
 			success: function(){
 				document.title = "Public Chat - Hire Teryong";
 				$("#demo-content").html(request.responseText);
+				setTimeout(function(){
+					refreshChats();
+				}, 5000);
 			}
 		});
 	});
@@ -336,4 +340,10 @@ function editAccount(){
 			$("#demo-content").html(request.responseText);
 		}
 	});
+}
+
+function refreshChats(){
+	refreshChatsTimeOut = setTimeout( function(){
+		refreshChats();
+	}, 5000);
 }
