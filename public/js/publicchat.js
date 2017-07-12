@@ -28,5 +28,7 @@ $(document).ready(function (e) {
 		});
 	}));
 	
-	$("#publicChatContent").animate({ scrollTop: $(document).height() }, "slow");
+	$("#publicChatContent").animate({
+		scrollTop: $(document).height()
+	}, "slow");
 });
