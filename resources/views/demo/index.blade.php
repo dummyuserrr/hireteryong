@@ -22,12 +22,13 @@
 							<a href="#home" class="list-group-item active" id="demohomepage">Demo Homepage</a>
 							<a href="#posts" class="list-group-item" id="viewposts">View Posts</a>
 							<a href="#my_account" class="list-group-item" id="myaccount">My Account</a>
+							<a href="#public_chat" class="list-group-item" id="publicchat">Public Chat</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-9">
-				<div class="panel panel-default">
+				<div class="panel panel-default" id="demopanel">
 					<div class="panel-heading">
 						@if(session()->has('status'))
 							<font class="pull-right">

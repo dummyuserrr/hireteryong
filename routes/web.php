@@ -13,6 +13,7 @@ Route::post('demo/posts', 'PagesController@posts');
 Route::post('demo/myaccount/edit', 'PagesController@editaccount');//->middleware('checksession');
 Route::post('demo/myaccount', 'PagesController@myaccount');//->middleware('checksession');
 Route::post('demo/myaccount/edit/save', 'UsersController@update');//->middleware('checksession');
+Route::post('demo/publicchat', 'PagesController@publicchat');
 
 // Users
 Route::post('demo/register', 'UsersController@register'); 

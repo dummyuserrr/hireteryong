@@ -55,6 +55,10 @@ class PagesController extends Controller
         }
     }
 
+    public function publicchat(Request $r){
+        return view('demo.publicchat');
+    }
+
     public function editaccount(){
         if(session()->has('status')){
             $u = new User;

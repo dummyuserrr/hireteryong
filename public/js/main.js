@@ -39,6 +39,7 @@ $(document).ready(function(){
 				$("#viewposts").attr('class', 'list-group-item active');
 				$("#demohomepage").attr('class', 'list-group-item');
 				$("#myaccount").attr('class', 'list-group-item');
+				$("#publicchat").attr('class', 'list-group-item');
 			},
 			success: function(){
 				document.title = "Posts - Hire Teryong";
@@ -60,6 +61,7 @@ $(document).ready(function(){
 				$("#viewposts").attr('class', 'list-group-item');
 				$("#demohomepage").attr('class', 'list-group-item');
 				$("#myaccount").attr('class', 'list-group-item active');
+				$("#publicchat").attr('class', 'list-group-item');
 			},
 			success: function(){
 				document.title = "My Account - Hire Teryong";
@@ -81,9 +83,32 @@ $(document).ready(function(){
 				$("#viewposts").attr('class', 'list-group-item');
 				$("#demohomepage").attr('class', 'list-group-item active');
 				$("#myaccount").attr('class', 'list-group-item');
+				$("#publicchat").attr('class', 'list-group-item');
 			},
 			success: function(){
 				document.title = "Demo Homepage - Hire Teryong";
+				$("#demo-content").html(request.responseText);
+			}
+		});
+	});
+
+	$("#publicchat").click(function(){
+		var request = $.ajax({
+			url: "/demo/publicchat",
+			type: "POST",
+			data: {
+				_token: $("#globalcsrf").val(),
+			},
+			dataType: "html",
+			beforeSend: function(){
+				$("#demo-content").html(loadingIcon);
+				$("#viewposts").attr('class', 'list-group-item');
+				$("#demohomepage").attr('class', 'list-group-item');
+				$("#myaccount").attr('class', 'list-group-item');
+				$("#publicchat").attr('class', 'list-group-item active');
+			},
+			success: function(){
+				document.title = "Public Chat - Hire Teryong";
 				$("#demo-content").html(request.responseText);
 			}
 		});

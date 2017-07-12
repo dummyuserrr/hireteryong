@@ -98,3 +98,26 @@ hr{
 .nochecks{
 	color: red;
 }
+
+#publicChatContent{
+	max-height: 50vh;
+	overflow-y: auto;
+	border: 1px solid #c9c9c9;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+#publicChatFooter{
+	padding-top: 13px;
+}
+
+.chats{
+	background-color: teal;
+	padding: 5px 10px 5px 10px;
+	border-radius: 8px;
+	color: white;
+}
+
+.chatsenders{
+	color: red;
+}
