@@ -43,10 +43,13 @@
 		<b><span class="glyphicon glyphicon-check checks"></span> SPA (SINGLE-PAGE-APPLICATION) WANNABE</b> - I believe that this function is what makes websites cool. The page will not reload when doing <b>SOME</b> actions (e.g. post, delete, etc)
 	</li>
 	<li>
-		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> CHAT</b> - Yeah, I added a public chat on this website. Please behave. 
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> REAL-TIME CHAT</b> - Yeah, I added a public chat on this website. Please behave. 
 	</li>
 	<li>
-		<b><span class="glyphicon glyphicon-check checks"></span> IMAGE COMPRESSION</b> - To conserve space and optimize loading, the size of the profile picture you will upload will decrease. 
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> REAL-TIME NOTIFICATIONS</b> - Of course, this won't work if you don't have an account. Haha
+	</li>
+	<li>
+		<b><span class="glyphicon glyphicon-check checks"></span> IMAGE COMPRESSION</b> - To conserve space and optimize loading, the size of the profile picture you will upload will decrease.
 	</li>
 	<li>
 		<b><span class="glyphicon glyphicon-check checks"></span> COMMENT</b> - Users can comment on posts.
