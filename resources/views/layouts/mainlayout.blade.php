@@ -99,9 +99,7 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About Me (Again)</h3>
-                        <p>*Insert cool stuffs here
-                        <br>
-                        (don't know what to put)
+                        <p><a href="https://www.visualcv.com/deithercorpuz">CLICK HERE</a> <br>to view my CV
                         </p>
                     </div>
                 </div>
