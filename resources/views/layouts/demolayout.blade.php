@@ -53,7 +53,6 @@
         <!-- /.container-fluid -->
     </nav>
     @yield('content')
-
     <!-- jQuery -->
     <script src="js/jquery/jquery.min.js"></script>
 
@@ -80,14 +79,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>Secret (to be provided
-                        upon <br>request to avoid assassins)</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>SOCIAL MEDIA ACCOUNTS</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://www.facebook.com/dthrcrpz" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        <p>Alaminos City, Pangasinan</i></a>
                             </li>
                             <li>
                                 <a href="https://twitter.com/dummyuserrr" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>

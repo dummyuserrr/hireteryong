@@ -81,8 +81,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>Secret (to be provided
-                        upon <br> request to avoid assassins)</p>
+                        <p>Alaminos City, Pangasinan</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>SOCIAL MEDIA ACCOUNTS</h3>
