@@ -3,6 +3,7 @@
 	<li>I just built a social media with simple functions. This site is boring because its main purpose is TO DEMONSTRATE my web development skills especially on back-end.</li>
 	<li>The icon <span class="glyphicon glyphicon-check checks"></span> means that the feature is done. </li>
 	<li>The icon <span class="glyphicon glyphicon-unchecked nochecks"></span> means that I'm still working on that feature. </li>
+	<li>Maybe I will no longer finish doing the remaining undone functions because they're already redundant. </li>
 	<li>When creating an account, I recommend you to <b>NOT</b> use your real name</li>
 	<li>This website is open-source. You can view its entire source code from my GitHub Repository (<a href="https://github.com/dummyuserrr/hireteryong">https://github.com/dummyuserrr/hireteryong</a>). Yeah, you can copy my codes. I made them as readable as I can.</li>
 	<li>To other developers who are much better, feel free to fork it and make a pull request.</li>
@@ -50,7 +51,7 @@
 		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> REAL-TIME NOTIFICATIONS</b> - Of course, this won't work if you don't have an account. Haha
 	</li>
 	<li>
-		<b><span class="glyphicon glyphicon-check checks"></span> ENCRYPTION</b> - Your PASSWORD will be hashed before it is saved. It's a one way encrpytion so I don't have a chance of knowing your password even if I own database. 
+		<b><span class="glyphicon glyphicon-check checks"></span> ENCRYPTION</b> - Your PASSWORD will be hashed before it is saved. It's a one way encrpytion so I have no way of knowing your password even if I own the database. 
 	</li>
 	<li>
 		<b><span class="glyphicon glyphicon-check checks"></span> IMAGE COMPRESSION</b> - To conserve space and optimize loading, the size of the profile picture you will upload will decrease.
