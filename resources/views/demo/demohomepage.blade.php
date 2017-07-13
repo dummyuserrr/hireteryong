@@ -28,11 +28,17 @@
 	<li>
 		<b><span class="glyphicon glyphicon-check checks"></span> EDIT PROFILE</b> - This is very self-explanatory.
 	</li>
-	<!-- <li>
-		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT POST</b> - This one too.
-	</li> -->
 	<li>
-		<b><span class="glyphicon glyphicon-check checks"></span> DELETE POST</b> - You can delete your post or your comment if you're logged in. And it's NOT actually deleted. It will just be archived.
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT POST</b> - This one too.
+	</li>
+	<li>
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> EDIT COMMENT</b> - This one too.
+	</li>
+	<li>
+		<b><span class="glyphicon glyphicon-check checks"></span> DELETE POST</b> - You can delete your post if you're logged in. And it's NOT actually deleted. It will just be archived.
+	</li>
+	<li>
+		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> DELETE COMMENT</b> - Same with deleting a post.
 	</li>
 	<li>
 		<b><span class="glyphicon glyphicon-unchecked nochecks"></span> SEARCH/VIEW</b> - Fetching data.
