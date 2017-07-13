@@ -47,7 +47,7 @@
                         <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="#contact">Contact Me</a>
                     </li>
                 </ul>
             </div>
